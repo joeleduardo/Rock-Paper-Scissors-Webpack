@@ -1,0 +1,233 @@
+body, ul, li, h1, h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #ccc;
+}
+
+header {
+  padding: 1rem;
+  background: #589595;
+  color: #fff;
+}
+
+a {
+  position: absolute;
+  right: 1rem;
+  color: #fff;
+  text-decoration: none;
+  background-image: url("assets/info.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 1.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #999;
+  margin: auto;
+}
+
+section span, .msg span {
+  font-size: 1.2rem;
+  color: #3e7777;
+}
+
+ul {
+  display: flex;
+  margin: 0.5rem auto;
+  justify-content: center;
+}
+
+li {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff;
+  background-size: cover;
+  cursor: pointer;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  color: #215661;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+input {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.msg {
+  padding: 1rem;
+  margin: auto;
+  border: 2px solid #79c7c7;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  align-self: center;
+  max-width: 250px;
+}
+
+.mode {
+  position: relative;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.checkbox {
+  display: block;
+  border: 4px solid #ccc;
+  margin-right: 0.5rem;
+  height: 16px;
+  width: 16px;
+  transition: border .3s linear;
+}
+
+.checkbox:before {
+  display: block;
+  content: '';
+  height: 12px;
+  width: 12px;
+  margin: 2px 2px;
+  transition: background .3s linear;
+}
+
+input:checked + .checkbox {
+  border: 4px solid #215661;
+}
+
+input:checked + .checkbox:before {
+  background: #215661;
+}
+
+.selectedOption {
+  display: flex;
+  font-weight: bolder;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  justify-content: center;
+  background: #fff;
+  background-size: cover;
+  padding: 1rem;
+}
+
+.rock {
+  background-image: url("assets/rock.png");
+}
+
+.spock {
+  background-image: url("assets/spock.png");
+}
+
+.paper {
+  background-image: url("assets/paper.png");
+}
+
+.lizard {
+  background-image: url("assets/lizard.png");
+}
+
+.scissors {
+  background-image: url("assets/scissors.png");
+}
+
+.options {
+  background: #ccc;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 0.8rem;
+  background: #589595;
+  border: 1px solid #215661;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.wrapper {
+  position: relative;
+  background: #efefef;
+}
+
+@media screen and (min-width: 480px) {
+  header {
+    text-align: center;
+  }
+
+  section {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  section span {
+    padding: 1rem;
+  }
+
+  li {
+    width: 85px;
+    height: 85px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .selectedOption {
+    width: 160px;
+    height: 160px;
+  }
+
+  .mode {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  section {
+    width: 780px;
+  }
+
+  li {
+    width: 120px;
+    height: 120px;
+  }
+
+  .selectedOption {
+    width: 240px;
+    height: 240px;
+  }
+
+  .button {
+    width: 150px;
+  }
+}
