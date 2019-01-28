@@ -10,8 +10,9 @@ module.exports = {
     main: './src/index.js'
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'js/[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   optimization: {
     minimizer: [
@@ -20,27 +21,23 @@ module.exports = {
         parallel: true,
         sourceMap: true
       }),
-      new OptimizeCssAssetsPlugin({})]
+      new OptimizeCssAssetsPlugin({
+
+      })
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Rock Paper Scissors & More',
       template: 'src/index.html',
+      favicon: 'src/favicon.ico',
       minify: {
         collapseWhitespace: true
       }
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
-    }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.optimize\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
-      },
-      canPrint: true
+      filename: "css/[name].[contenthash].css"
     })
   ],
   module: {
